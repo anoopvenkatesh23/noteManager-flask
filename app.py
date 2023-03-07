@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 @app.route('/', methods = ['GET', 'POST'])
 def home():
     if request.method == "GET":
-        allNotes = mongo.db.notes.find()
+        allNotes = mongo.db.notes.find()    #find all notes
         return render_template('home.html', notes = allNotes)
     elif request.method == "POST":
         note = request.form['note_text']
