@@ -1,0 +1,25 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+My Notes
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h2 class="text-center">My Notes</h2>
+    </div>
+
+    <form class="" action="/" method="POST">
+        <textarea class="form-control" name="note_text" placeholder="Add a note" rows="3"></textarea>
+        <br />
+        <input class="btn btn-block btn-success" type="submit" value="Add Note" />
+    </form>
+
+    <hr />
+
+    {% for note in notes %}
+    <pre class="lead">{{note['note']}}</pre>
+    {% endfor %}
+</div>
+{% endblock %}
